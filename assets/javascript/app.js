@@ -43,7 +43,7 @@
 
             this.domDivResult.innerHTML = "";
             this.domSummary.innerHTML = "";  
-            this.domDivReStartButton.style.display = "none";
+            this.domDivReStartButton.style.display = "none";            
         },
 
         RestartGame: function  () {
@@ -61,10 +61,14 @@
             this.domDivResult.innerHTML = "";
             this.domSummary.innerHTML = "";  
             this.domDivReStartButton.style.display = "none";
+            this.domDivStartButton.style.display = "none";  
 
             this.numOfCorrect = 0;
             this.numOfWrong = 0;
             this.numOfUnAnswered = 0;
+            this.questionIndex = 0;
+
+            this.startTrivia();
         }, 
 
         triviaQuestions : 
@@ -110,9 +114,9 @@
                 const titleBtnElem = document.createElement("button");
                 const pElem = document.createElement("p");
 
-                titleBtnElem.setAttribute("class", "btn btn-outline-info btn-lg m-2 p-2");                
+                titleBtnElem.setAttribute("class", "btn btn-outline-info btn-lg m-1 p-1");                
                 
-                pElem.setAttribute("class", "answer-button m-2 p-2 text-left"); 
+                pElem.setAttribute("class", "answer-button m-1 p-1 text-left"); 
                 pElem.setAttribute("id", "pElement" + i);                  
                 pElem.setAttribute("value", answer);       
                 
@@ -141,7 +145,7 @@
             
             console.log("startTrivia-function " + this.questonIntervalVal);            
             this.triviaStartTimeOutFunc = setTimeout(this.startTriviaQuestion.bind(beatlesTriviaGame), 1000);   
-            this.domDivStartButton.style.display = "none";
+            this.domDivStartButton.style.display = "none";                  
             this.genQuestions();
             
         },
@@ -242,11 +246,12 @@
                 beatlesTriviaGame.startTrivia.bind(beatlesTriviaGame));
 
     document.getElementById("restart-button").addEventListener("click", 
-                beatlesTriviaGame.startTrivia.bind(beatlesTriviaGame));                
+
+                beatlesTriviaGame.RestartGame.bind(beatlesTriviaGame));                
 
     document.addEventListener('click',function(e){
 
-    if (e.target && e.target.className === "answer-button m-2 p-2 text-left") {
+    if (e.target && e.target.className === "answer-button m-1 p-1 text-left") {
 
             console.log("answer button clicked " + e.target.innerText);
             const answerVal = document.getElementById(e.target.id);
