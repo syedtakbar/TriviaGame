@@ -1,0 +1,46 @@
+
+h1 {
+    text-align: center;
+    font-family: 'Faster One', cursive;
+    font-size: 60px;
+    
+}
+h4 {
+    text-align: center;
+}
+
+#currentquestion-text {
+    
+    text-align: center;
+    border-radius: 8px;
+    margin: 0; 
+}
+
+body {
+    background: url("https://3exggn92n2of0r1b3yma3xva-wpengine.netdna-ssl.com/wp-content/uploads/2009/09/The-Beatles-PR-everything-pr.jpg");
+    background-repeat: no-repeat;
+    background-size: 400px 300px;
+    font-family: 'Cinzel', serif;
+}
+
+.jumbotron {
+    opacity: .92;
+    text-align: center;
+    
+}
+
+#start-button {
+    text-align: center;
+    width: 40%;
+}
+
+#start-button:hover {
+    background-color: lightgray;
+}
+
+.answer-button {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+}
