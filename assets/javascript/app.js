@@ -17,7 +17,7 @@
         triviaStartTimeOutFunc: "",
         questonIntervalFunc: "",
         questonIntervalVal: 1000,
-        displyResultTimeOut: 5000,
+        displyResultTimeOut: 10000,
         startTriviaTimeOut: 500,
 
         questionTimerVal: 0,
@@ -42,7 +42,7 @@
             this.songUrl = ""
             this.triviaAnswer = "";
 
-            this.questionTimerVal = 10,
+            this.questionTimerVal = 25,
 
     
             this.domDivReStartButton.style.display = "none";  
