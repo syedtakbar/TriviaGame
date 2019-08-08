@@ -45,11 +45,17 @@
             this.questionTimerVal = 10,
 
     
-            this.domDivResult.innerHTML = "";
-            this.domSummary.innerHTML = "";  
             this.domDivReStartButton.style.display = "none";  
             this.domDivStartButton.style.display = "none";  
             this.domVideoArea.style.display = "none";
+            this.domDivResult.style.display = "none";
+            this.domSummary.style.display = "none";
+
+            this.domDivResult.innerHTML = "";
+            this.domSummary.innerHTML = "";  
+            this.domVideoArea.innerHTML = "";
+
+   
             
             this.domDivTriviaQuestion.style.display = "block";
             this.domTimerText.style.display = "block";
@@ -79,19 +85,19 @@
             { 
                 question: "What Beatles song was written for Mia Farrow's sister?",
                 possibleAnswers: ["For No One", "Dear Prudence", "Julia", "Honey Pie"], 
-                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/wQA59IkCF5I?controls=0;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
+                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/wQA59IkCF5I?controls=0;autoplay=1;start=10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
                 answer: "Dear Prudence"
             },
             { 
                 question: "Which Beatles song inspired the most cover versions?",
                 possibleAnswers: ["Yesterday", "A Day In The Life", "I Want To Hold Your Hand", "Hey Jude"], 
-                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/pRTXUZDBBYo?controls=0;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
+                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/pRTXUZDBBYo?controls=0;autoplay=1;start=10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
                 answer: "Yesterday"
             },
             { 
                 question: "What Beatles song was taken from the Broadway musical The Music Man?",
                 possibleAnswers: ["Ain't She Sweet", "Till There Was You", "Tomorrow Never Knows", "Your Mother Should Know"], 
-                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/SHAqAO7w8M8?controls=0;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
+                url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/SHAqAO7w8M8?controls=0;autoplay=1;start=10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
                 answer: "Till There Was You"
             },
             { 
@@ -227,6 +233,7 @@
             this.domDivAnwser.style.display = "none";
             this.domDivResult.style.display = "none";
             this.domVideoArea.style.display = "none";
+            this.domVideoArea.innerHTML = "";
             
             this.domDivReStartButton.style.display = "block";
             this.domSummary.style.display = "block";
@@ -259,7 +266,7 @@
             console.log("answer button clicked " + e.target.innerText);
             const answerVal = document.getElementById(e.target.id);
             const answerText = answerVal.getAttribute("value");
-            if (answerVal.innerText === answerText) {
+            if (answerVal.innerText.toLocaleLowerCase() === answerText.toLocaleLowerCase()) {
                 console.log("correct answer: " + answerText);
                 beatlesTriviaGame.isAnswerCorrect = true;
                 beatlesTriviaGame.numOfCorrect++;
