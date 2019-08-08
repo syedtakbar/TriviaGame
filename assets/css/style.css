@@ -41,7 +41,7 @@ body {
 #restart-button {
     text-align: center;
     width: 40%;
-    border: 2px solid rebeccapurple;
+    border: 2px solid;
 }
 
 #restart-button:hover {
